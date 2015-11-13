@@ -119,6 +119,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibox
 
+--local battery = 
 require("battery.batt")
 
 batterywidget = wibox.widget.textbox()
@@ -134,8 +135,9 @@ battimer:start()
 mytextclock = awful.widget.textclock()
 
 -- Create a wibox for each screen and add it
-mywibox = {}
-
+mywibox = {
+    batterywidget
+}
 mypromptbox = {}
 mylayoutbox = {}
 mytaglist = {}
