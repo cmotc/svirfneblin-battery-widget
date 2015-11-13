@@ -38,7 +38,6 @@ mv debian/rules.new debian/rules
 # debian/install must contain the list of scripts to install 
 # as well as the target directory
 echo etc/xdg/svirfneblin/rc.lua.batt.example etc/xdg/svirfneblin >> debian/install
-echo etc/xdg/svirfneblin/debian/menu.lua etc/xdg/svirfneblin/debian/ >> debian/install
 echo etc/xdg/svirfneblin/$SOURCEBIN etc/xdg/svirfneblin/$SOURCEDIR >> debian/install
 echo usr/share/doc/$DEBFOLDER/$SOURCEDOC usr/share/doc/$DEBFOLDER >> debian/install
 
