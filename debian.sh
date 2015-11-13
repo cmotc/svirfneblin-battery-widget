@@ -1,9 +1,10 @@
 #! /bin/sh
 # Configure your paths and filenames
 SOURCEBINPATH=.
-SOURCEBIN=netman/pech.lua
+SOURCEDIR=battery/
+SOURCEBIN=battery/batt.lua
 SOURCEDOC=README.md
-DEBFOLDER=awesome-network-manager
+DEBFOLDER=svirfneblin-battery-widget
 
 DEBVERSION=$(date +%Y%m%d)
 
@@ -36,9 +37,9 @@ mv debian/rules.new debian/rules
 
 # debian/install must contain the list of scripts to install 
 # as well as the target directory
-echo etc/xdg/awesome/rc.lua.pech.example etc/xdg/awesome >> debian/install
-echo etc/xdg/awesome/debian/menu.lua etc/xdg/awesome/debian/ >> debian/install
-echo etc/xdg/awesome/$SOURCEBIN etc/xdg/awesome/conky/ >> debian/install
+echo etc/xdg/svirfneblin/rc.lua.batt.example etc/xdg/svirfneblin >> debian/install
+echo etc/xdg/svirfneblin/debian/menu.lua etc/xdg/svirfneblin/debian/ >> debian/install
+echo etc/xdg/svirfneblin/$SOURCEBIN etc/xdg/svirfneblin/$SOURCEDIR >> debian/install
 echo usr/share/doc/$DEBFOLDER/$SOURCEDOC usr/share/doc/$DEBFOLDER >> debian/install
 
 echo "Source: $DEBFOLDER
@@ -47,9 +48,9 @@ Priority: optional
 Maintainer: cmotc <cmotc@openmailbox.org>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.5
-Homepage: https://www.github.com/awesome-conky-hud
-#Vcs-Git: git@github.com:cmotc/awesome-conky-hud
-#Vcs-Browser: https://www.github.com/cmotc/awesome-conky-hud
+Homepage: https://www.github.com/cmotc/svirfneblin-battery-widget
+#Vcs-Git: git@github.com:cmotc/svirfneblin-battery-widget
+#Vcs-Browser: https://www.github.com/cmotc/svirfneblin-battery-widget
 
 Package: $DEBFOLDER
 Architecture: all
