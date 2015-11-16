@@ -64,7 +64,7 @@ function batclosure (adapter)
                 naughty.notify({title = "⚡ Beware! ⚡",
                             text = "Battery charge is low ( ⚡ "..battery.."%)!",
                             timeout = 7,
-                            position = "bottom_right",
+                            position = "top_right",
                             fg = beautiful.fg_focus,
                             bg = beautiful.bg_focus
                             })

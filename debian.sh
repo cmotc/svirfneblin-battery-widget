@@ -53,7 +53,7 @@ Homepage: https://www.github.com/cmotc/svirfneblin-battery-widget
 
 Package: $DEBFOLDER
 Architecture: all
-Depends: lightdm, lightdm-gtk-greeter, awesome (>= 3.4), \${misc:Depends}
+Depends: lightdm, lightdm-gtk-greeter, awesome (>= 3.4), svirfneblin-panel, \${misc:Depends}
 Description: A modified version of the debian rc.lua which starts conky, and
  a script which makes sure awesomewm only starts it once.
 " > debian/control
