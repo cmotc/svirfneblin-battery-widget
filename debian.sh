@@ -28,8 +28,9 @@ pwd
 # Create the packaging skeleton (debian/*)
 dh_make -s --indep --createorig 
 
-mkdir -p debian/tmp/usr
+mkdir -p debian/tmp/
 cp -R usr debian/tmp/usr
+cp -R etc debian/tmp/etc
 
 # Remove make calls
 grep -v makefile debian/rules > debian/rules.new 
