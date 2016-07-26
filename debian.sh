@@ -31,7 +31,7 @@ cd $DEBFOLDERNAME
 pwd
 
 # Create the packaging skeleton (debian/*)
-dh_make -s --indep --createorig 
+dh_make --indep --createorig 
 
 mkdir -p debian/tmp/
 cp -R usr debian/tmp/usr
