@@ -22,7 +22,6 @@ DEBPACKAGENAME=$DEBFOLDER\_$DEBVERSION
 
 rm -rf $DEBFOLDERNAME
 # Create your scripts source dir
-mkdir $DEBFOLDERNAME
 
 # Copy your script to the source dir
 cp -R $TOME $DEBFOLDERNAME/
@@ -31,17 +30,17 @@ cd $DEBFOLDERNAME
 pwd
 
 # Create the packaging skeleton (debian/*)
-dh_make --indep --createorig 
+dh_make --indep --createorig
 
-mkdir -p debian/tmp/
-cp -R usr debian/tmp/usr
-cp -R etc debian/tmp/etc
+#mkdir -p debian/tmp/
+#cp -R usr debian/tmp/usr
+#cp -R etc debian/tmp/etc
 
 # Remove make calls
-grep -v makefile debian/rules > debian/rules.new 
-mv debian/rules.new debian/rules 
+grep -v makefile debian/rules > debian/rules.new
+mv debian/rules.new debian/rules
 
-# debian/install must contain the list of scripts to install 
+# debian/install must contain the list of scripts to install
 # as well as the target directory
 echo etc/xdg/svirfneblin/rc.lua.batt.example etc/xdg/svirfneblin >> debian/install
 echo etc/xdg/svirfneblin/$SOURCEBIN etc/xdg/svirfneblin/$SOURCEDIR >> debian/install
@@ -59,7 +58,7 @@ Homepage: https://www.github.com/cmotc/svirfneblin-battery-widget
 
 Package: $DEBFOLDER
 Architecture: all
-Depends: lightdm, lightdm-gtk-greeter, awesome (>= 3.4), svirfneblin-panel, \${misc:Depends}
+Depends: awesome (>= 3.4), svirfneblin-panel, \${misc:Depends}
 Description: A modified version of the debian rc.lua which starts conky, and
  a script which makes sure awesomewm only starts it once.
 " > debian/control
